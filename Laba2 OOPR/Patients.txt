@@ -1,0 +1,20 @@
+Name: Харітон Surname: Шульга
+Age: 21
+State: Male
+Healer: Медсестра
+Problem desription: Просто супер!
+Name: Анна Surname: Сідорська
+Age: 21
+State: Female
+Healer: None
+Problem desription: Неймовірно!
+Name: Саша Surname: Прендецький
+Age: 20
+State: Male
+Healer: None
+Problem desription: Погано!
+Name: Саша Surname: Прендецький
+Age: 19
+State: Male
+Healer: None
+Problem desription: Головний біль

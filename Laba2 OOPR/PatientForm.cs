@@ -29,10 +29,8 @@ namespace Laba2_OOPR
                 else
                     e.Handled = true;
             };
-            System.Drawing.Drawing2D.GraphicsPath myPath =
-    new System.Drawing.Drawing2D.GraphicsPath();
+            System.Drawing.Drawing2D.GraphicsPath myPath = new System.Drawing.Drawing2D.GraphicsPath();
             myPath.AddEllipse(0, 0, label5.Width, label5.Height);
-
             Region myRegion = new Region(myPath);
             label5.Region = myRegion;
         }
@@ -60,7 +58,7 @@ namespace Laba2_OOPR
         }
 
         private void Patient_Load(object sender, EventArgs e)
-        { 
+        {
             richTextBox1.Enabled = false;
             this.Text = _patientUser.Profile.FirstName + " " + _patientUser.Profile.LastName;
         }
@@ -122,6 +120,10 @@ namespace Laba2_OOPR
         {
             _mainForm.Visible = true;
             this.Hide();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
         }
     }
 }

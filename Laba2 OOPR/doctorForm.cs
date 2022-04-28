@@ -18,6 +18,8 @@ namespace Laba2_OOPR
 {
     public partial class doctorForm : Form
     {
+        protected internal DoctorUser _doctor = null;
+
         public doctorForm(mainForm form, BaseRepo user)
         {
             _doctor = (DoctorUser)user;
@@ -25,10 +27,7 @@ namespace Laba2_OOPR
             InitializeComponent();
         }
 
-        protected internal DoctorUser _doctor = null;
-
         private mainForm _mainForm;
-        
 
         private void label4_Click(object sender, EventArgs e)
         {

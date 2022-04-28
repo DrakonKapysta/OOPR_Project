@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.Entity;
 using Laba2_OOPR.Models;
+using System.Data.Entity.Migrations;
 
 namespace Laba2_OOPR.EF
 {
@@ -14,7 +15,10 @@ namespace Laba2_OOPR.EF
         {
 
         }
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
 
+        }
         public virtual DbSet<PatientProfile> PatientProfiles { get; set; }
 
         public virtual DbSet<PatientUser> PatientUsers { get; set; }

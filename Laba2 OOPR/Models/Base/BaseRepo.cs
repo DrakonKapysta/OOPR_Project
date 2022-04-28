@@ -12,5 +12,7 @@ namespace Laba2_OOPR.Models.Base
     {
         [Key]
         public virtual int Id { get; set; }
+        [Timestamp]
+        public byte[] Timestamp { get; set; }
     }
 }

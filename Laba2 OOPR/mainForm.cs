@@ -18,9 +18,9 @@ namespace Laba2_OOPR
     public partial class mainForm : Form
     {
         public bool AccountExists = false;
-        public Doctor _doc = new Doctor();
-        protected PatientForm _myPatient;
-        protected doctorForm _myDoctor;
+        public DoctorUser _doc = null;
+        protected PatientForm _myPatient= null;
+        protected doctorForm _myDoctor = null;
         protected UserContext _db = null;
         public mainForm()
         {

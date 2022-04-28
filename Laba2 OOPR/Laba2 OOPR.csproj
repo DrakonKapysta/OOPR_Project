@@ -76,6 +76,15 @@
     <Compile Include="mainForm.Designer.cs">
       <DependentUpon>mainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202204280712290_initial.cs" />
+    <Compile Include="Migrations\202204280712290_initial.designer.cs">
+      <DependentUpon>202204280712290_initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202204280716197_Final.cs" />
+    <Compile Include="Migrations\202204280716197_Final.designer.cs">
+      <DependentUpon>202204280716197_Final.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Base\BaseRepo.cs" />
     <Compile Include="Models\DischargedPatients.cs" />
     <Compile Include="Models\DoctorProfile.cs" />
@@ -114,6 +123,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="mainForm.resx">
       <DependentUpon>mainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202204280712290_initial.resx">
+      <DependentUpon>202204280712290_initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202204280716197_Final.resx">
+      <DependentUpon>202204280716197_Final.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PatientForm.resx">
       <DependentUpon>PatientForm.cs</DependentUpon>

@@ -29,5 +29,7 @@ namespace Laba2_OOPR.EF
 
         public virtual DbSet<Extracts> Extracts { get; set; }
 
+        public virtual DbSet<DischargedPatients> DischargedPatients {get; set;}
+
     }
 }

@@ -66,7 +66,17 @@
                 new DischargedPatients{ PFirstName ="Максім", PLastName ="Клун", Doctor_Id = doctorUserList[1].Id},
                 new DischargedPatients{ PFirstName ="Валентин", PLastName ="Сорока", Doctor_Id = doctorUserList[1].Id},
             };
-            
+
+            context.DischargedPatients.AddOrUpdate(x => new { x.PFirstName }, dispPatients.ToArray());
+
+            var extracts = new List<Extracts>
+            {
+                new Extracts{extracts="Drink more water", Doctor_Id = doctorUserList[0].Id, Patient_Id = patientUserList[0].Id},
+                new Extracts{extracts="Eat more vegetables", Doctor_Id = doctorUserList[0].Id, Patient_Id = patientUserList[0].Id},
+                new Extracts{extracts="Take vitamins", Doctor_Id = doctorUserList[1].Id, Patient_Id = patientUserList[1].Id},
+                new Extracts{extracts="More sleep", Doctor_Id = doctorUserList[1].Id, Patient_Id = patientUserList[2].Id}
+            };
+            context.Extracts.AddRange(extracts);
         }
         
     }

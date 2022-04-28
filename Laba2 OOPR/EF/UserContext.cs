@@ -15,15 +15,7 @@ namespace Laba2_OOPR.EF
         {
 
         }
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        {
-    //        modelBuilder.Entity<PatientUser>().Property(p => p.Id)
-    //.HasDatabaseGeneratedOption(System.ComponentModel
-    //.DataAnnotations.Schema.DatabaseGeneratedOption.None);
-    //        modelBuilder.Entity<DoctorUser>().Property(p => p.Id)
-    //.HasDatabaseGeneratedOption(System.ComponentModel
-    //.DataAnnotations.Schema.DatabaseGeneratedOption.None);
-        }
+       
         public virtual DbSet<PatientProfile> PatientProfiles { get; set; }
 
         public virtual DbSet<PatientUser> PatientUsers { get; set; }

@@ -88,6 +88,10 @@
     <Compile Include="Migrations\202204280917160_addedModelBuilder.designer.cs">
       <DependentUpon>202204280917160_addedModelBuilder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202204280941168_AddedAutoInit.cs" />
+    <Compile Include="Migrations\202204280941168_AddedAutoInit.designer.cs">
+      <DependentUpon>202204280941168_AddedAutoInit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Base\BaseRepo.cs" />
     <Compile Include="Models\DischargedPatients.cs" />
@@ -136,6 +140,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202204280917160_addedModelBuilder.resx">
       <DependentUpon>202204280917160_addedModelBuilder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202204280941168_AddedAutoInit.resx">
+      <DependentUpon>202204280941168_AddedAutoInit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PatientForm.resx">
       <DependentUpon>PatientForm.cs</DependentUpon>

@@ -23,61 +23,61 @@
 
         protected override void Seed(UserContext context)
         {
-           // var patientUserList = new List<PatientUser>
-           //{
-           //    new PatientUser{Id = 1,Login = "DrakonKapysta", Password = "123"},
-           //    new PatientUser{Id = 2,Login = "Tonni", Password = "123"},
-           //    new PatientUser{Id = 3,Login = "Versetti", Password = "123"},
-           //    new PatientUser{Id = 4,Login = "Chudo", Password = "123"},
-           //    new PatientUser{Id = 5,Login = "Antony", Password = "123"}
-           //};
+            var patientUserList = new List<PatientUser>
+           {
+               new PatientUser{Id = 1,Login = "DrakonKapysta", Password = "123"},
+               new PatientUser{Id = 2,Login = "Tonni", Password = "123"},
+               new PatientUser{Id = 3,Login = "Versetti", Password = "123"},
+               new PatientUser{Id = 4,Login = "Chudo", Password = "123"},
+               new PatientUser{Id = 5,Login = "Antony", Password = "123"}
+           };
 
-           // context.PatientUsers.AddOrUpdate(x => new { x.Login, x.Password }, patientUserList.ToArray());
+            context.PatientUsers.AddOrUpdate(x => new { x.Login, x.Password }, patientUserList.ToArray());
 
-           // var patientProfileList = new List<PatientProfile>
-           //{
-           //    new PatientProfile{ Id = patientUserList[0].Id, FirstName="Вася", LastName="Кушнір", Age = 19, State = "Male"},
-           //    new PatientProfile{ Id = patientUserList[1].Id, FirstName="Денис", LastName="Смішко", Age = 20, State = "Male"},
-           //    new PatientProfile{ Id = patientUserList[2].Id, FirstName="Харітон", LastName="Шульга", Age = 21, State = "Male"},
-           //    new PatientProfile{ Id = patientUserList[3].Id, FirstName="Коля", LastName="Поліщук", Age = 22, State = "Male"},
-           //    new PatientProfile{ Id = patientUserList[4].Id, FirstName="Назар", LastName="Дудка", Age = 23, State = "Male"},
-           //};
+            var patientProfileList = new List<PatientProfile>
+           {
+               new PatientProfile{ Id = patientUserList[0].Id, FirstName="Вася", LastName="Кушнір", Age = 19, State = "Male"},
+               new PatientProfile{ Id = patientUserList[1].Id, FirstName="Денис", LastName="Смішко", Age = 20, State = "Male"},
+               new PatientProfile{ Id = patientUserList[2].Id, FirstName="Харітон", LastName="Шульга", Age = 21, State = "Male"},
+               new PatientProfile{ Id = patientUserList[3].Id, FirstName="Коля", LastName="Поліщук", Age = 22, State = "Male"},
+               new PatientProfile{ Id = patientUserList[4].Id, FirstName="Назар", LastName="Дудка", Age = 23, State = "Male"},
+           };
 
-           // context.PatientProfiles.AddOrUpdate(x => new { x.FirstName, x.LastName }, patientProfileList.ToArray());
+            context.PatientProfiles.AddOrUpdate(x => new { x.FirstName, x.LastName }, patientProfileList.ToArray());
 
-           // var doctorUserList = new List<DoctorUser>
-           // { 
-           //    new DoctorUser{Id = 1, Login = "Oleg2002",Password ="123"},
-           //    new DoctorUser{Id = 2, Login = "Antony20",Password ="123"}
-           // };
+            var doctorUserList = new List<DoctorUser>
+            {
+               new DoctorUser{Id = 1, Login = "Oleg2002",Password ="123"},
+               new DoctorUser{Id = 2, Login = "Antony20",Password ="123"}
+            };
 
-           // context.DoctorUsers.AddOrUpdate(x => new { x.Login, x.Password }, doctorUserList.ToArray());
+            context.DoctorUsers.AddOrUpdate(x => new { x.Login, x.Password }, doctorUserList.ToArray());
 
-           // var doctorProfileList = new List<DoctorProfile>
-           //{
-           //    new DoctorProfile{ Id = doctorUserList[0].Id, FirstName="Олег", LastName="Матьокін", Age = 19, State = "Male", Catagery="Dantistn"},
-           //    new DoctorProfile{ Id = doctorUserList[1].Id, FirstName="Антон", LastName="Смішко", Age = 20, State = "Male", Catagery = "Dantist"}
-           //};
-           // context.DoctorProfiles.AddOrUpdate(x => new { x.FirstName, x.LastName }, doctorProfileList.ToArray());
-           // var dispPatients = new List<DischargedPatients>
-           // {
-           //     new DischargedPatients{ PFirstName ="Толік", PLastName ="Анаболік", Doctor_Id = doctorUserList[0].Id},
-           //     new DischargedPatients{ PFirstName ="Ігорь", PLastName ="Маркс", Doctor_Id = doctorUserList[0].Id},
-           //     new DischargedPatients{ PFirstName ="Максім", PLastName ="Клун", Doctor_Id = doctorUserList[1].Id},
-           //     new DischargedPatients{ PFirstName ="Валентин", PLastName ="Сорока", Doctor_Id = doctorUserList[1].Id},
-           // };
+            var doctorProfileList = new List<DoctorProfile>
+           {
+               new DoctorProfile{ Id = doctorUserList[0].Id, FirstName="Олег", LastName="Матьокін", Age = 19, State = "Male", Catagery="Dantistn"},
+               new DoctorProfile{ Id = doctorUserList[1].Id, FirstName="Антон", LastName="Смішко", Age = 20, State = "Male", Catagery = "Dantist"}
+           };
+            context.DoctorProfiles.AddOrUpdate(x => new { x.FirstName, x.LastName }, doctorProfileList.ToArray());
+            
+            var extracts = new List<Extracts>
+            {
+                new Extracts{extracts="Drink more water", Doctor_Id = doctorUserList[0].Id, Patient_Id = patientUserList[0].Id},
+                new Extracts{extracts="Eat more vegetables", Doctor_Id = doctorUserList[0].Id, Patient_Id = patientUserList[0].Id},
+                new Extracts{extracts="Take vitamins", Doctor_Id = doctorUserList[1].Id, Patient_Id = patientUserList[1].Id},
+                new Extracts{extracts="More sleep", Doctor_Id = doctorUserList[1].Id, Patient_Id = patientUserList[2].Id}
+            };
+            context.Extracts.AddRange(extracts);
+            var dispPatients = new List<DischargedPatients>
+            {
+                new DischargedPatients{ PFirstName ="Толік", PLastName ="Анаболік", Doctor_Id = doctorUserList[0].Id},
+                new DischargedPatients{ PFirstName ="Ігорь", PLastName ="Маркс", Doctor_Id = doctorUserList[0].Id},
+                new DischargedPatients{ PFirstName ="Максім", PLastName ="Клун", Doctor_Id = doctorUserList[1].Id},
+                new DischargedPatients{ PFirstName ="Валентин", PLastName ="Сорока", Doctor_Id = doctorUserList[1].Id},
+            };
 
-           // context.DischargedPatients.AddOrUpdate(x => new { x.PFirstName }, dispPatients.ToArray());
-
-           // var extracts = new List<Extracts>
-           // {
-           //     new Extracts{extracts="Drink more water", Doctor_Id = doctorUserList[0].Id, Patient_Id = patientUserList[0].Id},
-           //     new Extracts{extracts="Eat more vegetables", Doctor_Id = doctorUserList[0].Id, Patient_Id = patientUserList[0].Id},
-           //     new Extracts{extracts="Take vitamins", Doctor_Id = doctorUserList[1].Id, Patient_Id = patientUserList[1].Id},
-           //     new Extracts{extracts="More sleep", Doctor_Id = doctorUserList[1].Id, Patient_Id = patientUserList[2].Id}
-           // };
-           // context.Extracts.AddRange(extracts);
+            context.DischargedPatients.AddOrUpdate(x => new { x.PFirstName }, dispPatients.ToArray());
         }
-        
+
     }
 }

@@ -289,10 +289,116 @@ namespace Laba2_OOPR
         {
             using (var _db = new DischargedPatientsRepo())
             {
-                var dPatient = _db.GetAll().Where(x=>x.Doctor_Id == _doctor.Id);
+                var dPatient = _db.GetAll().Where(x => x.Doctor_Id == _doctor.Id);
+                int count = _db.GetAll().Count(x => x.Doctor_Id == _doctor.Id);
+                MessageBox.Show("Загальна к-сть виписаних пацієнтів: " + count, _doctor.Profile.FirstName + " " + _doctor.Profile.LastName, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 foreach (var item in dPatient)
                 {
                     MessageBox.Show(item.PFirstName + " " + item.PLastName);
+                }
+            }
+        }
+
+        private void найстаршийПацієнтToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            using (var _db = new UserContext())
+            {
+                var maxAge = _db.DischargedPatients.Where(p => p.Doctor_Id == _doctor.Id).Max(x => x.Age);
+                MessageBox.Show($"Найстарший виписаний пацієнт {maxAge} років.");
+            }
+        }
+
+        private void наймолодшийПацієнтToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (var _db = new UserContext())
+            {
+                var minAge = _db.DischargedPatients.Where(p => p.Doctor_Id == _doctor.Id).Min(x => x.Age);
+                MessageBox.Show($"Наймолодший виписаний пацієнт {minAge} років.");
+            }
+        }
+
+        private void середнійВікПацієнтівToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (var _db = new UserContext())
+            {
+                var averageAge = _db.DischargedPatients.Where(p => p.Doctor_Id == _doctor.Id).Average(x => x.Age);
+                MessageBox.Show($"Середній вік виписаних пацієнтів {averageAge} років.");
+            }
+        }
+
+        private void обєднанняToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (var _db = new UserContext())
+            {
+                var union = _db.DischargedPatients.Where(p => p.Doctor_Id == 2).Union(_db.DischargedPatients.Where(x => x.Age >= 18));
+                foreach (var item in union)
+                {
+                    MessageBox.Show($"{item.PFirstName} {item.PLastName} {item.Age}");
+                }
+            }
+        }
+
+        private void перетинToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (var _db = new UserContext())
+            {
+                var intersect = _db.DischargedPatients.Where(x => x.Doctor_Id == _doctor.Id).Intersect(_db.DischargedPatients.Where(p => p.Age > 30));
+                foreach (var item in intersect)
+                {
+                    MessageBox.Show($"{item.PFirstName} {item.PLastName} {item.Age}");
+                }
+            }
+        }
+
+        private void виключенняToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (var _db = new UserContext())
+            {
+                var except = _db.DischargedPatients.Where(x => x.Age > 15).Except(_db.DischargedPatients.Where(p => p.Doctor_Id == _doctor.Id));
+                foreach (var item in except)
+                {
+                    MessageBox.Show($"{item.PFirstName} {item.PLastName} {item.Age}");
+                }
+            }
+        }
+
+        private void зєднанняToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (var _db = new UserContext())
+            {
+                var join = _db.DoctorProfiles.Join(_db.DischargedPatients, p => p.Id, c => c.Doctor_Id, (p, c) => new { p.FirstName, p.LastName, c.PFirstName, c.PLastName, c.Age });
+                foreach (var item in join)
+                {
+                    MessageBox.Show($"Пацієнт: {item.PFirstName} {item.PLastName} {item.Age}", $"Доктор: {item.FirstName} {item.LastName}");
+                }
+            }
+        }
+
+        private void групуванняToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (var _db = new UserContext())
+            {
+                var group = _db.Extracts.Include(x => x.DoctorProfile).GroupBy(p => p.DoctorProfile.FirstName);
+                foreach (var item in group)
+                {
+                    MessageBox.Show(item.Key);
+                    foreach (var item2 in item)
+                    {
+                        MessageBox.Show(item2.extracts);
+                    }
+                }
+            }
+        }
+
+        private void приєднанняToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (var _db = new UserContext())
+            {
+                var sortByAge = _db.DischargedPatients.OrderBy(x => x.Age);
+                foreach (var item in sortByAge)
+                {
+                    MessageBox.Show($"Ім'я: {item.PFirstName} прізвище: {item.PLastName} вік: {item.Age}");
                 }
             }
         }

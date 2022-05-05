@@ -18,6 +18,9 @@ namespace Laba2_OOPR.Models
 
         public string PLastName { get; set; }
 
+
+        public int Age { get; set; }
+
         [ForeignKey("DoctorProfiles")]
         public int Doctor_Id { get; set; }
 

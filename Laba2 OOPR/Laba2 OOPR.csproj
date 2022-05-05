@@ -92,6 +92,14 @@
     <Compile Include="Migrations\202204280941168_AddedAutoInit.designer.cs">
       <DependentUpon>202204280941168_AddedAutoInit.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202205051810565_next.cs" />
+    <Compile Include="Migrations\202205051810565_next.designer.cs">
+      <DependentUpon>202205051810565_next.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202205051812085_age.cs" />
+    <Compile Include="Migrations\202205051812085_age.designer.cs">
+      <DependentUpon>202205051812085_age.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Base\BaseRepo.cs" />
     <Compile Include="Models\DischargedPatients.cs" />
@@ -143,6 +151,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202204280941168_AddedAutoInit.resx">
       <DependentUpon>202204280941168_AddedAutoInit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205051810565_next.resx">
+      <DependentUpon>202205051810565_next.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205051812085_age.resx">
+      <DependentUpon>202205051812085_age.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PatientForm.resx">
       <DependentUpon>PatientForm.cs</DependentUpon>

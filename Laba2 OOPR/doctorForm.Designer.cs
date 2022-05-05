@@ -50,12 +50,22 @@
             this.назначитиЛікуванняToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.виписатиПацієнтаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.назначитиДоглядальникаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.виписаніПацієнтиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.роботаЗПацієнтамиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.найстаршийПацієнтToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.наймолодшийПацієнтToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.середнійВікПацієнтівToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.обєднанняToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.перетинToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.виключенняToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.групуванняToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.зєднанняToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.приєднанняToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.виписаніПацієнтиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -287,7 +297,8 @@
             this.назначитиЛікуванняToolStripMenuItem,
             this.виписатиПацієнтаToolStripMenuItem,
             this.назначитиДоглядальникаToolStripMenuItem,
-            this.виписаніПацієнтиToolStripMenuItem});
+            this.виписаніПацієнтиToolStripMenuItem,
+            this.роботаЗПацієнтамиToolStripMenuItem});
             this.менюToolStripMenuItem.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.менюToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.менюToolStripMenuItem.Name = "менюToolStripMenuItem";
@@ -325,6 +336,92 @@
             this.назначитиДоглядальникаToolStripMenuItem.Size = new System.Drawing.Size(271, 26);
             this.назначитиДоглядальникаToolStripMenuItem.Text = "Назначити доглядальника";
             this.назначитиДоглядальникаToolStripMenuItem.Click += new System.EventHandler(this.назначитиДоглядальникаToolStripMenuItem_Click);
+            // 
+            // виписаніПацієнтиToolStripMenuItem
+            // 
+            this.виписаніПацієнтиToolStripMenuItem.Name = "виписаніПацієнтиToolStripMenuItem";
+            this.виписаніПацієнтиToolStripMenuItem.Size = new System.Drawing.Size(271, 26);
+            this.виписаніПацієнтиToolStripMenuItem.Text = "Виписані пацієнти";
+            this.виписаніПацієнтиToolStripMenuItem.Click += new System.EventHandler(this.виписаніПацієнтиToolStripMenuItem_Click);
+            // 
+            // роботаЗПацієнтамиToolStripMenuItem
+            // 
+            this.роботаЗПацієнтамиToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.найстаршийПацієнтToolStripMenuItem,
+            this.наймолодшийПацієнтToolStripMenuItem,
+            this.середнійВікПацієнтівToolStripMenuItem,
+            this.обєднанняToolStripMenuItem,
+            this.перетинToolStripMenuItem,
+            this.виключенняToolStripMenuItem,
+            this.групуванняToolStripMenuItem,
+            this.зєднанняToolStripMenuItem,
+            this.приєднанняToolStripMenuItem});
+            this.роботаЗПацієнтамиToolStripMenuItem.Name = "роботаЗПацієнтамиToolStripMenuItem";
+            this.роботаЗПацієнтамиToolStripMenuItem.Size = new System.Drawing.Size(271, 26);
+            this.роботаЗПацієнтамиToolStripMenuItem.Text = "Робота з пацієнтами";
+            // 
+            // найстаршийПацієнтToolStripMenuItem
+            // 
+            this.найстаршийПацієнтToolStripMenuItem.Name = "найстаршийПацієнтToolStripMenuItem";
+            this.найстаршийПацієнтToolStripMenuItem.Size = new System.Drawing.Size(271, 26);
+            this.найстаршийПацієнтToolStripMenuItem.Text = "Найстарший пацієнт";
+            this.найстаршийПацієнтToolStripMenuItem.Click += new System.EventHandler(this.найстаршийПацієнтToolStripMenuItem_Click);
+            // 
+            // наймолодшийПацієнтToolStripMenuItem
+            // 
+            this.наймолодшийПацієнтToolStripMenuItem.Name = "наймолодшийПацієнтToolStripMenuItem";
+            this.наймолодшийПацієнтToolStripMenuItem.Size = new System.Drawing.Size(271, 26);
+            this.наймолодшийПацієнтToolStripMenuItem.Text = "Наймолодший пацієнт";
+            this.наймолодшийПацієнтToolStripMenuItem.Click += new System.EventHandler(this.наймолодшийПацієнтToolStripMenuItem_Click);
+            // 
+            // середнійВікПацієнтівToolStripMenuItem
+            // 
+            this.середнійВікПацієнтівToolStripMenuItem.Name = "середнійВікПацієнтівToolStripMenuItem";
+            this.середнійВікПацієнтівToolStripMenuItem.Size = new System.Drawing.Size(271, 26);
+            this.середнійВікПацієнтівToolStripMenuItem.Text = "Середній вік пацієнтів";
+            this.середнійВікПацієнтівToolStripMenuItem.Click += new System.EventHandler(this.середнійВікПацієнтівToolStripMenuItem_Click);
+            // 
+            // обєднанняToolStripMenuItem
+            // 
+            this.обєднанняToolStripMenuItem.Name = "обєднанняToolStripMenuItem";
+            this.обєднанняToolStripMenuItem.Size = new System.Drawing.Size(271, 26);
+            this.обєднанняToolStripMenuItem.Text = "Об\'єднання";
+            this.обєднанняToolStripMenuItem.Click += new System.EventHandler(this.обєднанняToolStripMenuItem_Click);
+            // 
+            // перетинToolStripMenuItem
+            // 
+            this.перетинToolStripMenuItem.Name = "перетинToolStripMenuItem";
+            this.перетинToolStripMenuItem.Size = new System.Drawing.Size(271, 26);
+            this.перетинToolStripMenuItem.Text = "Перетин";
+            this.перетинToolStripMenuItem.Click += new System.EventHandler(this.перетинToolStripMenuItem_Click);
+            // 
+            // виключенняToolStripMenuItem
+            // 
+            this.виключенняToolStripMenuItem.Name = "виключенняToolStripMenuItem";
+            this.виключенняToolStripMenuItem.Size = new System.Drawing.Size(271, 26);
+            this.виключенняToolStripMenuItem.Text = "Виключення";
+            this.виключенняToolStripMenuItem.Click += new System.EventHandler(this.виключенняToolStripMenuItem_Click);
+            // 
+            // групуванняToolStripMenuItem
+            // 
+            this.групуванняToolStripMenuItem.Name = "групуванняToolStripMenuItem";
+            this.групуванняToolStripMenuItem.Size = new System.Drawing.Size(271, 26);
+            this.групуванняToolStripMenuItem.Text = "Групування";
+            this.групуванняToolStripMenuItem.Click += new System.EventHandler(this.групуванняToolStripMenuItem_Click);
+            // 
+            // зєднанняToolStripMenuItem
+            // 
+            this.зєднанняToolStripMenuItem.Name = "зєднанняToolStripMenuItem";
+            this.зєднанняToolStripMenuItem.Size = new System.Drawing.Size(271, 26);
+            this.зєднанняToolStripMenuItem.Text = "З\'єднання";
+            this.зєднанняToolStripMenuItem.Click += new System.EventHandler(this.зєднанняToolStripMenuItem_Click);
+            // 
+            // приєднанняToolStripMenuItem
+            // 
+            this.приєднанняToolStripMenuItem.Name = "приєднанняToolStripMenuItem";
+            this.приєднанняToolStripMenuItem.Size = new System.Drawing.Size(271, 26);
+            this.приєднанняToolStripMenuItem.Text = "Сортування по віку";
+            this.приєднанняToolStripMenuItem.Click += new System.EventHandler(this.приєднанняToolStripMenuItem_Click);
             // 
             // panel2
             // 
@@ -387,13 +484,6 @@
             this.pictureBox3.TabIndex = 19;
             this.pictureBox3.TabStop = false;
             this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
-            // 
-            // виписаніПацієнтиToolStripMenuItem
-            // 
-            this.виписаніПацієнтиToolStripMenuItem.Name = "виписаніПацієнтиToolStripMenuItem";
-            this.виписаніПацієнтиToolStripMenuItem.Size = new System.Drawing.Size(271, 26);
-            this.виписаніПацієнтиToolStripMenuItem.Text = "Виписані пацієнти";
-            this.виписаніПацієнтиToolStripMenuItem.Click += new System.EventHandler(this.виписаніПацієнтиToolStripMenuItem_Click);
             // 
             // doctorForm
             // 
@@ -467,5 +557,15 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.ToolStripMenuItem виписаніПацієнтиToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem роботаЗПацієнтамиToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem найстаршийПацієнтToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem наймолодшийПацієнтToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem середнійВікПацієнтівToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem обєднанняToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem перетинToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem виключенняToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem групуванняToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem зєднанняToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem приєднанняToolStripMenuItem;
     }
 }

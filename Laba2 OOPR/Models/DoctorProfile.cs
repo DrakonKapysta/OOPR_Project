@@ -48,5 +48,7 @@ namespace Laba2_OOPR.Models
         public int GetPatientAmount() => _patientList.Count;
 
         public virtual DischargedPatients DischargedPatients { get; set; }
+
+        public virtual ICollection<Extracts> Extracts { get; set; }
     }
 }

@@ -25,5 +25,7 @@ namespace Laba2_OOPR.Models
 
         public PatientUser PatientUser { get; set; }
 
+        public virtual ICollection<Extracts> Extracts { get; set; }
+
     }
 }

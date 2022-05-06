@@ -256,6 +256,8 @@ namespace Laba2_OOPR
             panel1.Visible = false;
             button1.Visible = true;
             button2.Visible = true;
+            textBox1.Clear();
+            textBox2.Clear();
 
         }
 

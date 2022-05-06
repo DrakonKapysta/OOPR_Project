@@ -64,7 +64,6 @@
     </Compile>
     <Compile Include="EF\UserContext.cs" />
     <Compile Include="Events\TreatmentArgs.cs" />
-    <Compile Include="IDisease.cs" />
     <Compile Include="IWorker.cs" />
     <Compile Include="mainForm.cs">
       <SubType>Form</SubType>
@@ -165,7 +164,6 @@
     <EmbeddedResource Include="treatmentForm.resx">
       <DependentUpon>treatmentForm.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -60,7 +60,7 @@
             this.виключенняToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.групуванняToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.зєднанняToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.приєднанняToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.сортуванняToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -355,7 +355,7 @@
             this.виключенняToolStripMenuItem,
             this.групуванняToolStripMenuItem,
             this.зєднанняToolStripMenuItem,
-            this.приєднанняToolStripMenuItem});
+            this.сортуванняToolStripMenuItem});
             this.роботаЗПацієнтамиToolStripMenuItem.Name = "роботаЗПацієнтамиToolStripMenuItem";
             this.роботаЗПацієнтамиToolStripMenuItem.Size = new System.Drawing.Size(271, 26);
             this.роботаЗПацієнтамиToolStripMenuItem.Text = "Робота з пацієнтами";
@@ -416,12 +416,12 @@
             this.зєднанняToolStripMenuItem.Text = "З\'єднання";
             this.зєднанняToolStripMenuItem.Click += new System.EventHandler(this.зєднанняToolStripMenuItem_Click);
             // 
-            // приєднанняToolStripMenuItem
+            // сортуванняToolStripMenuItem
             // 
-            this.приєднанняToolStripMenuItem.Name = "приєднанняToolStripMenuItem";
-            this.приєднанняToolStripMenuItem.Size = new System.Drawing.Size(271, 26);
-            this.приєднанняToolStripMenuItem.Text = "Сортування по віку";
-            this.приєднанняToolStripMenuItem.Click += new System.EventHandler(this.приєднанняToolStripMenuItem_Click);
+            this.сортуванняToolStripMenuItem.Name = "сортуванняToolStripMenuItem";
+            this.сортуванняToolStripMenuItem.Size = new System.Drawing.Size(271, 26);
+            this.сортуванняToolStripMenuItem.Text = "Сортування по віку";
+            this.сортуванняToolStripMenuItem.Click += new System.EventHandler(this.сортуванняToolStripMenuItem_Click);
             // 
             // panel2
             // 
@@ -566,6 +566,6 @@
         private System.Windows.Forms.ToolStripMenuItem виключенняToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem групуванняToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem зєднанняToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem приєднанняToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem сортуванняToolStripMenuItem;
     }
 }

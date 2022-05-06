@@ -67,7 +67,7 @@
                 new Extracts{extracts="Take vitamins", Doctor_Id = doctorUserList[1].Id, Patient_Id = patientUserList[1].Id},
                 new Extracts{extracts="More sleep", Doctor_Id = doctorUserList[1].Id, Patient_Id = patientUserList[2].Id}
             };
-            context.Extracts.AddOrUpdate(x => new { x.Doctor_Id, x.Patient_Id }, extracts.ToArray());
+            context.Extracts.AddOrUpdate(x => new { x.extracts}, extracts.ToArray());
             var dispPatients = new List<DischargedPatients>
             {
                 new DischargedPatients{ PFirstName ="Толік", PLastName ="Анаболік", Doctor_Id = doctorUserList[0].Id, Age = 35},
@@ -75,7 +75,6 @@
                 new DischargedPatients{ PFirstName ="Максім", PLastName ="Клун", Doctor_Id = doctorUserList[1].Id, Age = 19},
                 new DischargedPatients{ PFirstName ="Валентин", PLastName ="Сорока", Doctor_Id = doctorUserList[1].Id, Age = 31},
             };
-
             context.DischargedPatients.AddOrUpdate(x => new { x.PFirstName }, dispPatients.ToArray());
         }
 

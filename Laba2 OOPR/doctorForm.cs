@@ -118,7 +118,6 @@ namespace Laba2_OOPR
             comboBox2.SelectAll();
             if (comboBox2.SelectedText == "Медсестра" || comboBox2.SelectedText == "Лікар")
             {
-               PatientWritter.AppointDoctor(this);
                 MessageBox.Show("Доглядача призначенно.");
             }
             else
@@ -181,7 +180,7 @@ namespace Laba2_OOPR
             }
             using (var _db = new DischargedPatientsRepo())
             {
-                var dPerson = new DischargedPatients { PFirstName = patientToDischarg.FirstName, PLastName = patientToDischarg.LastName, Doctor_Id = _doctor.Id };
+                var dPerson = new DischargedPatients { PFirstName = patientToDischarg.FirstName, PLastName = patientToDischarg.LastName, Doctor_Id = _doctor.Id, Age = patientToDischarg.Age };
                 _db.Add(dPerson);
             }
             comboBox1.Items.Remove(comboBox1.SelectedItem);
@@ -214,14 +213,7 @@ namespace Laba2_OOPR
 
         private void button1_Click_2(object sender, EventArgs e)
         {
-            var MedicHospital = new Hospital(new[]
-            {
-                new Doctor("Sam"), new Doctor("Bob"), new Doctor("Tom"), new Doctor("Greg")
-            });
-            foreach (var item in MedicHospital)
-            {
-                MessageBox.Show(((Doctor)item).Name);
-            }
+
         }
         private void CheckProblem()
         {
@@ -379,7 +371,7 @@ namespace Laba2_OOPR
         {
             using (var _db = new UserContext())
             {
-                var group = _db.Extracts.Include(x => x.DoctorProfile).GroupBy(p => p.DoctorProfile.FirstName);
+                var group = _db.Extracts.GroupBy(p => p.DoctorProfile.FirstName);
                 foreach (var item in group)
                 {
                     MessageBox.Show(item.Key);
@@ -391,11 +383,14 @@ namespace Laba2_OOPR
             }
         }
 
-        private void приєднанняToolStripMenuItem_Click(object sender, EventArgs e)
+        private void сортуванняToolStripMenuItem_Click(object sender, EventArgs e)
         {
             using (var _db = new UserContext())
             {
-                var sortByAge = _db.DischargedPatients.OrderBy(x => x.Age);
+                //var sortByAge = _db.DischargedPatients.OrderBy(x => x.Age);
+                var sortByAge = from s in _db.DischargedPatients
+                                orderby s.Age
+                                select s;
                 foreach (var item in sortByAge)
                 {
                     MessageBox.Show($"Ім'я: {item.PFirstName} прізвище: {item.PLastName} вік: {item.Age}");
